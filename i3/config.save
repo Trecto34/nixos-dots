@@ -114,10 +114,10 @@ floating_modifier $mod
 # used for navigation in the window manager
 
 # 1A] change focus
-# bindsym $mod+j focus down
-# bindsym $mod+k focus up
-# bindsym $mod+l focus right
-# bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+h focus left
 
 # 1B] alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -298,8 +298,4 @@ bindsym $mod+shift+m exec picom -f
 bindsym $mod+shift+n exec pkill -f picom
 
 #workspace
-# workspace 1 output HDMI-1
-# workspace 10 output LVDS-1
-
 workspace 10 output HDMI-1
-
