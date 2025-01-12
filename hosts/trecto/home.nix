@@ -18,6 +18,7 @@
 			pkgs.tree
 			pkgs.fd
 			pkgs.fzf
+			pkgs.android-tools
 	];
 
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -50,6 +51,10 @@
 		userName = "Trecto34";
 		userEmail = "trecto34@protonmail.com";
 	};
+
+
+# Remove Tearing Intel
+	services.picom.vSync = true;
 
 # Let Home Manager install and manage itself.
 	programs.home-manager.enable = true;
