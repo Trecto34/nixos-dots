@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nvf, ... }:
 
 {
 	home.username = "trecto";
@@ -9,12 +9,12 @@
 # import programs
 		imports = [ 
 		../../programs/tools-pentest.nix 
+		./dotfiles/nvf.nix
 		];
 
 # The home.packages option allows you to install Nix packages into your
 # environment.
 	home.packages = [
-		pkgs.neovim
 			pkgs.htop
 			pkgs.jq
 			pkgs.tree
