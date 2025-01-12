@@ -7,7 +7,9 @@
 	home.stateVersion = "24.11"; # Please read the comment before changing.
 
 # import programs
-		imports = [ ../../programs/tools-pentest.nix ];
+		imports = [ 
+		../../programs/tools-pentest.nix 
+		];
 
 # The home.packages option allows you to install Nix packages into your
 # environment.
@@ -19,12 +21,19 @@
 			pkgs.fd
 			pkgs.fzf
 			pkgs.android-tools
+
+# Add Nerdfonts
+			pkgs.nerd-fonts.iosevka
+			pkgs.nerd-fonts.zed-mono
 	];
 
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
 # plain files is through 'home.file'.
 	home.file = {
 	};
+
+# Enable Fonts 
+	fonts.fontconfig.enable = true;
 
 # Home Manager can also manage your environment variables through
 # 'home.sessionVariables'. These will be explicitly sourced when using a
@@ -53,7 +62,7 @@
 	};
 
 
-# Remove Tearing Intel
+# Remove Tearing on Intel Chipset
 	services.picom.vSync = true;
 
 # Let Home Manager install and manage itself.
