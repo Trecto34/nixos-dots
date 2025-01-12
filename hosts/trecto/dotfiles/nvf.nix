@@ -5,7 +5,13 @@
 
   programs.nvf = {
     enable = true;
-    # Add your NVF configuration options here
+    settings = {
+      vim.theme.enable = true;
+      vim.theme.name = "gruvbox";
+      vim.theme.style = "dark";
+
+      vim.languages.nix.enable = true;
+    };
   };
 }
 

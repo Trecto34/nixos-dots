@@ -1,39 +1,39 @@
 { config, pkgs, nvf, ... }:
 
 {
-	home.username = "trecto";
-	home.homeDirectory = "/home/trecto";
+  home.username = "trecto";
+  home.homeDirectory = "/home/trecto";
 
-	home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "24.11"; # Please read the comment before changing.
 
 # import programs
-		imports = [ 
-		../../programs/tools-pentest.nix 
-		./dotfiles/nvf.nix
-		];
+    imports = [ 
+    ../../programs/tools-pentest.nix 
+    ./dotfiles/nvf.nix
+    ];
 
 # The home.packages option allows you to install Nix packages into your
 # environment.
-	home.packages = [
-			pkgs.htop
-			pkgs.jq
-			pkgs.tree
-			pkgs.fd
-			pkgs.fzf
-			pkgs.android-tools
+  home.packages = [
+    pkgs.htop
+      pkgs.jq
+      pkgs.tree
+      pkgs.fd
+      pkgs.fzf
+      pkgs.android-tools
 
 # Add Nerdfonts
-			pkgs.nerd-fonts.iosevka
-			pkgs.nerd-fonts.zed-mono
-	];
+      pkgs.nerd-fonts.iosevka
+      pkgs.nerd-fonts.zed-mono
+  ];
 
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
 # plain files is through 'home.file'.
-	home.file = {
-	};
+  home.file = {
+  };
 
 # Enable Fonts 
-	fonts.fontconfig.enable = true;
+  fonts.fontconfig.enable = true;
 
 # Home Manager can also manage your environment variables through
 # 'home.sessionVariables'. These will be explicitly sourced when using a
@@ -51,20 +51,20 @@
 #
 #  /etc/profiles/per-user/trecto/etc/profile.d/hm-session-vars.sh
 #
-	home.sessionVariables = {
-		EDITOR = "nvim";
-	};
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 
-	programs.git = {
-		enable = true;
-		userName = "Trecto34";
-		userEmail = "trecto34@protonmail.com";
-	};
+  programs.git = {
+    enable = true;
+    userName = "Trecto34";
+    userEmail = "trecto34@protonmail.com";
+  };
 
 
 # Remove Tearing on Intel Chipset
-	services.picom.vSync = true;
+  services.picom.vSync = true;
 
 # Let Home Manager install and manage itself.
-	programs.home-manager.enable = true;
+  programs.home-manager.enable = true;
 }
